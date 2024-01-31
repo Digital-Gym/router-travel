@@ -7,13 +7,14 @@ const destinations = sourceData.destinations
 
 <template>
     <div id="nav">
-        <router-link id="logo" :to="{name: 'Home'}">AwesomeTravel</router-link>
-        <router-link 
+        <AppLink id="logo" :to="{name: 'Home'}">AwesomeTravel</AppLink>
+        <AppLink 
             v-for="destination in destinations"
             :key="destination.id"
             :to="{name: 'destination.show', params: {id: destination.id,  slug: destination.slug}}"
         >
             {{ destination.name }}
-        </router-link>
+        </AppLink>
+        <AppLink to="https://www.youtube.com/">External Link</AppLink>
     </div>
 </template>
